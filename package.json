@@ -1,6 +1,6 @@
 {
-  "name": "bearcat",
-  "version": "0.4.29",
+  "name": "bearcat-es6",
+  "version": "0.5.0",
   "description": "Magic, self-described javaScript objects build up elastic, maintainable front-backend javaScript applications",
   "main": "index.js",
   "bin": "./bin/bearcat-bin.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bearcatjs/bearcat.git"
+    "url": "https://github.com/ChrisPei/bearcat-es6"
   },
   "keywords": [
     "di",
@@ -35,7 +35,7 @@
     "pomelo-logger": "./shim/logger.js",
     "chokidar": "./shim/chokidar.js"
   },
-  "author": "fantasyni",
+  "author": "ChrisPei",
   "license": "MIT",
   "devDependencies": {
     "expect.js": "~0.3.1",
