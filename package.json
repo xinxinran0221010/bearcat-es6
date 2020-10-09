@@ -1,15 +1,17 @@
 {
-  "name": "bearcat-es6",
-  "version": "0.6.1",
+  "name": "bearcat-es6-decorator-aop",
+  "version": "0.6.3",
   "description": "Magic, self-described javaScript objects build up elastic, maintainable front-backend javaScript applications",
   "main": "index.js",
   "bin": "./bin/bearcat-bin.js",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "build:prod": "rm -rf ./dist && mkdir -p dist && cp -r ./lib ./dist/ && cp ./*.md ./dist/ && cp -r ./bin ./dist/ && cp ./index.js ./dist/ && cp -r ./shim ./dist/ && cp ./package.json ./dist",
+    "deploy": "npm publish dist --registry=http://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChrisPei/bearcat-es6"
+    "url": "https://github.com/xinxinran0221010/bearcat-es6-with-decorator"
   },
   "keywords": [
     "di",
@@ -27,24 +29,25 @@
     "magic, self-described javaScript objects"
   ],
   "dependencies": {
-    "pomelo-logger": "0.1.x",
+    "chokidar": "~1.0.1",
     "commander": "2.x",
-    "chokidar": "~1.0.1"
+    "pomelo-logger": "0.1.x"
   },
   "browser": {
     "pomelo-logger": "./shim/logger.js",
     "chokidar": "./shim/chokidar.js"
   },
-  "author": "ChrisPei",
+  "author": "xinxinran",
   "license": "MIT",
   "devDependencies": {
-    "expect.js": "~0.3.1",
-    "mocha": ">=0.0.1",
-    "grunt": "~0.4.2",
     "blanket": "1.1.x",
+    "expect.js": "~0.3.1",
+    "grunt": "~0.4.2",
     "grunt-browserify": "3.x",
-    "grunt-mocha-test": "0.8.x",
     "grunt-contrib-clean": "0.5.x",
-    "grunt-contrib-uglify": "~0.3.2"
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-mocha-test": "0.8.x",
+    "mocha": ">=0.0.1",
+    "uglify-es": "git://github.com/mishoo/UglifyJS2#harmony"
   }
 }

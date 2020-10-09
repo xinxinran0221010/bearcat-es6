@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-cp');
 
   var src = ['test/bearcat.js', 'test/beans/support/*.js', 'test/context/applicationContext.js', 'test/util/*.js',
     'test/resource/*.js', 'test/aop/aop.js', 'test/aop/aop_annotation.js', 'test/aop/advisor.js', 'test/aop/aspect.js',
@@ -60,10 +61,33 @@ module.exports = function(grunt) {
         }
       }
     },
+    cp: {
+      lib: {
+        src: './lib',
+        dist: './dist/lib'
+      },
+      shim: {
+        src: './shim',
+        dist: './dist/shim'
+      },
+      bin: {
+        src: './bin',
+        dist: './dist/bin'
+      },
+      meta: {
+        src: './package.json',
+        dist: './dist/'
+      },
+      md: {
+        src: './*.md',
+        dist: './dist/'
+      }
+    }
   });
 
   // Default task.
   grunt.registerTask('default', ['clean', 'mochaTest']);
   grunt.registerTask('browser_test', ['browserify:tests']);
   grunt.registerTask('package', ['browserify:standalone', 'uglify']);
+  grunt.registerTask('build', ['cp:lib', 'cp:shim', 'cp:bin', 'cp:meta', 'cp:md']);
 };
