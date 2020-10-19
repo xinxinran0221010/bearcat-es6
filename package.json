@@ -1,6 +1,6 @@
 {
   "name": "bearcat-es6-decorator-aop",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Magic, self-described javaScript objects build up elastic, maintainable front-backend javaScript applications",
   "main": "index.js",
   "bin": "./bin/bearcat-bin.js",
@@ -8,6 +8,9 @@
     "test": "grunt",
     "build:prod": "rm -rf ./dist && mkdir -p dist && cp -r ./lib ./dist/ && cp ./*.md ./dist/ && cp -r ./bin ./dist/ && cp ./index.js ./dist/ && cp -r ./shim ./dist/ && cp ./package.json ./dist",
     "deploy": "npm publish dist --registry=http://registry.npmjs.org"
+  },
+  "engines": {
+    "node": ">=8.0"
   },
   "repository": {
     "type": "git",
